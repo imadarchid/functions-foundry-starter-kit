@@ -2,5 +2,18 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+via_ir = true
 
+fs_permissions = [
+    { access = "read", path = "lib/foundry-chainlink-toolkit/out" },
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./reports" },
+]
+
+remappings = [
+    "forge-std/=lib/forge-std/src/",
+    '@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts/src/',
+    "foundry-chainlink-toolkit/=lib/foundry-chainlink-toolkit/",
+    "@solmate/=lib/solmate/src/",
+]
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
